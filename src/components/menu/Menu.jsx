@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import menuStyles from './menu.module.scss'
@@ -27,13 +27,48 @@ query  {
   }
   
 `)
-// console.log(data);
+const [ open, setOpen ] = useState(false);
 
     return (
         <>
         <nav>
+          <div className={menuStyles.nav_Wrapp}>
+        <div className={menuStyles.btn}
+        onClick={ () => setOpen(!open) }>
+               <div className={menuStyles.line}></div>
+               <div className={menuStyles.line}></div>
+               <div className={menuStyles.line}></div>
+        
+                </div>
         
         <ul className={menuStyles.nav_list}>
+          {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map((item)=> {
+            return(
+              <li className={menuStyles.nav_item} key={item.link_name.id}>
+              <Link className={menuStyles.nav_link} to={item.path.url} key={item.link_name.id}>
+              
+                {item.link_name[0].text}
+               
+                </Link>
+                </li>
+            )
+          })}
+                   
+                </ul>
+                
+                <ul className={  open === true ? menuStyles.navNarrow
+                : menuStyles.navNarrow_show}>
+                  <div className={menuStyles.btn1}
+        onClick={ () => setOpen(!open) }>
+          <div className={menuStyles.line}></div>
+               <div className={menuStyles.line}></div>
+        </div>
+                
+                
+               
+               
+        
+                
           {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map((item)=> {
             return(
               <li className={menuStyles.nav_item} key={item.link_name.id}>
@@ -48,6 +83,7 @@ query  {
        
                    
                 </ul>
+                </div>
             </nav>
             </>
     )

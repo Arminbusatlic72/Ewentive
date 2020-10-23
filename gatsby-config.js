@@ -20,21 +20,18 @@ module.exports = {
   `gatsby-plugin-sass`,
   `gatsby-transformer-sharp`, 
   `gatsby-plugin-sharp`,
+  `gatsby-source-fontawesome`,
   {
-    resolve: `gatsby-plugin-prefetch-google-fonts`,
+    resolve: `gatsby-plugin-google-fonts`,
     options: {
       fonts: [
-        {
-          family: 'Raleway', 
-          subsets: [`latin`],
-        },
-        {
-          family: `Raleway`,
-          variants: [`100`,`200`,`300`,`500`,`600`,`700`,`800`,`900`]
-        },
+        `Raleway`,
+        `sans-serif\:300,400,700` // you can also specify font weights and styles
       ],
-    },
+      display: 'swap'
+    }
   },
+  
 
     {
       resolve: 'gatsby-source-prismic',

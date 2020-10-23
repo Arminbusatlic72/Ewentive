@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
+import Section2 from "../components/section2/Section2"
 import postStyles from "./post.module.scss"
 const Post = ({ data: { prismicContentItem } }) => {
   const { data } = prismicContentItem
@@ -11,7 +12,8 @@ const Post = ({ data: { prismicContentItem } }) => {
         <main>
           <div className={postStyles.content_item__container}>
      
-      <div dangerouslySetInnerHTML={{ __html: data.activity_type.html }} />
+      <p>{data.activity_type1 }</p>
+
       <div dangerouslySetInnerHTML={{ __html: data.benefits.html }} />
       <div dangerouslySetInnerHTML={{ __html: data.content_name.html }} />
       <div dangerouslySetInnerHTML={{ __html: data.content_title.html }} />
@@ -22,6 +24,7 @@ const Post = ({ data: { prismicContentItem } }) => {
       <div dangerouslySetInnerHTML={{ __html: data.subtitle.html }} />
       <div dangerouslySetInnerHTML={{ __html: data.tag_line.html }} />
       </div>
+      <Section2/>
       </main>
       </Layout>
     </React.Fragment>
@@ -34,43 +37,42 @@ export const pageQuery = graphql`
       uid
       data {
         
-          activity_type {
-            html
-          }
+          activity_type1 
           benefits {
             html
-            text
+            
           }
           content_name {
             html
-            text
+            
           }
           content_title {
             html
-            text
+            
           }
           deliverable {
             html
-            text
+            
           }
           long_description {
             html
-            text
+            
           }
           quote {
             html
-            text
+            
           }
           short_description {
             html
-            text
+            
           }
           subtitle {
-            text
+            html
+            
           }
           tag_line {
             html
-            text
+            
           }
         
       }

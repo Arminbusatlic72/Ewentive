@@ -43,11 +43,11 @@
         "placeholder" : "Subtitle"
       }
     },
-    "activity_type" : {
-      "type" : "StructuredText",
+    "activity_type1" : {
+      "type" : "Select",
       "config" : {
-        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "allowTargetBlank" : true,
+        "options" : [ "Consulting", "Hands-on consulting", "Workshop", "Webinar" ],
+        "default_value" : "Consulting",
         "label" : "Activity type",
         "placeholder" : "Activity type"
       }
@@ -95,6 +95,37 @@
         "allowTargetBlank" : true,
         "label" : "Deliverable",
         "placeholder" : "Deliverable"
+      }
+    }
+  },
+  "Event" : {
+    "date_of_event" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "Date of event",
+        "placeholder" : "Date of event"
+      }
+    },
+    "time_of_event" : {
+      "type" : "Timestamp",
+      "config" : {
+        "label" : "Time of event",
+        "placeholder" : "time of event"
+      }
+    },
+    "subscribe_link" : {
+      "type" : "Link",
+      "config" : {
+        "label" : "Subscribe link",
+        "placeholder" : "Subscribe link"
+      }
+    },
+    "place" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label" : "Place",
+        "placeholder" : "Place"
       }
     }
   }

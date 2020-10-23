@@ -6,7 +6,11 @@ import headerStyles from "./header.module.scss"
 const Header = () => {
     return (
         <header className={headerStyles.header}>
-            <Link className={headerStyles.logo} to="/"><h1 >Marketing for startups </h1><span>by Ewentive</span></Link>
+            <div className={headerStyles.mobile__header}>
+                
+            
+                <Link className={headerStyles.logo} to="/"><h1 >Marketing for startups </h1><span>by Ewentive</span></Link>
+            </div>
             <Menu/>
             
         </header>

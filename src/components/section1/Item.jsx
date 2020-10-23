@@ -41,15 +41,18 @@ const Item = () => {
   }
   `)
     
-console.log(data); 
+// console.log(data); 
     return (
         <>
         {data.allPrismicIndexPage.edges[0].node.data.body[1].items.map(item => (
         
          
-            <figure >
+            <figure className={itemStyles.card__item} >
               <Img className={itemStyles.img} key={item.content_item.id} fluid={item.top_image.localFile.childImageSharp.fluid} alt={item.top_image.alt} />
               <div className={itemStyles.item__body}>
+              <p>Website development and integration with CRM and analytics.
+										</p>
+                    <h4>hands-on consulting</h4>
                <Button link={item.cta_link.url} >{item.cta_button_caption}</Button>
                </div>
 

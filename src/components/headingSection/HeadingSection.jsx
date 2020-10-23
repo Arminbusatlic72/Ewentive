@@ -1,5 +1,5 @@
 import React from "react"
-import {useStaticQuery} from "gatsby"
+import {graphql, useStaticQuery} from "gatsby"
 import Button from "../button/Button"
 import HeadingSectionStyles from "./headingSection.module.scss"
 const HeadingSection = () => {
@@ -38,7 +38,7 @@ const HeadingSection = () => {
         <section className={HeadingSectionStyles.heading__section}>
 
     <div dangerouslySetInnerHTML={{ __html: sectionData.primary.title.html }} />
-  <Button link={sectionData.items[0].cta_button_link.url}>{sectionData.items[0].cta_button_capture}</Button>
+  <Button className={HeadingSectionStyles.medium} link={sectionData.items[0].cta_button_link.url}>{sectionData.items[0].cta_button_capture}</Button>
     </section>
         </>
 

@@ -1,3 +1,4 @@
+@import "../../styles/mixins.scss";
 .header {
     display: flex;
     justify-content: space-between;
@@ -9,26 +10,57 @@
     background: #0F1116;
     color: #fff;
     padding: 0.5rem;
-    // z-index: 100;
+    z-index: 100;
     font-size: 100%;
 }
 
 .logo {
     cursor: pointer;
     color: inherit;
-    text-decoration: none;
+    text-decoration: none; 
     h1{
     font-size: 1rem!important;
-    
     text-transform: uppercase;
     display: inline;
 }
     span {
-        display: inline;
-        color: #555555;
+    display: inline;
+    color: #555555;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     line-height: 1.65em;
+    @include  mediaSm {
+        display: none;
+    }
+    @include  mediaMd {
+        display: none;
+    }
     }
 }
 
+.mobile__header {
+    @include  mediaSm {
+    width: 100%;
+    display: block;
+    position: relative;
+    font-weight: 700;
+    text-align: center;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 1;
+}
+@include  mediaMd {
+    width: 100%;
+    display: block;
+    position: relative;
+    font-weight: 700;
+    text-align: center;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 1;
+}
+}

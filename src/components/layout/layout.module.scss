@@ -1,13 +1,13 @@
+
 @import "../../styles/mixins.scss";
 .wrapper {
     min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
-    
-
 }
 .container {
+    
     @include mediaXL {
         width: 1200px;
     }

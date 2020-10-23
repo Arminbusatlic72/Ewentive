@@ -5,6 +5,7 @@ import Layout from "../components/layout/Layout"
 // import indexStlye from "./index.module.scss"
 import HeadingSection from "../components/headingSection/HeadingSection"
 import Section1 from "../components/section1/Section1"
+import Section2 from "../components/section2/Section2"
 
 const IndexPage = () => {
   
@@ -15,6 +16,7 @@ const IndexPage = () => {
       <main>
       <HeadingSection />
       <Section1 />
+      <Section2 />
         
     </main>
       </Layout></>)
