@@ -1,96 +1,90 @@
 @import "../../styles/mixins.scss";
 
 .nav_list {
-    
-    display: none;  
-    @include mediaLg {  
-     display: block;
-    }
-    @include  mediaXL{
+  display: none;
+  @include mediaLg {
     display: block;
-    }
+  }
+  @include mediaXL {
+    display: block;
+  }
 }
+
 .nav_item {
-    color: #999999;
-    display: inline-block;
-    padding: 1.25rem 1.25rem;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
+  color: #999999;
+  display: inline-block;
+  padding: 1.25rem 1.25rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
 }
 .nav_link {
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
 }
 
 .nav-item:hover {
-    color: #666666;
+  color: #666666;
 }
-
 .active-nav-item {
-    color: #333333;
+  color: #333333;
 }
 .btn {
-    background: black;
-    position: absolute;
-    left: 15px;
-    top: 20px;
-    z-index: 13;
-    cursor: pointer;
-    display: block;
-    @include mediaLg {
-      display: none;
+  background: black;
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  z-index: 13;
+  cursor: pointer;
+  display: block;
+  @include mediaLg {
+    display: none;
   }
-  @include  mediaXL{
-  display: none;
+  @include mediaXL {
+    display: none;
   }
-    .line {
-      width: 25px;
-      height: 3px;
-      margin-bottom: 5px;
-      background: #fff;
+  .line {
+    width: 25px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #fff;
   }
+}
 
+.btn1 {
+  background: black;
+  position: absolute;
+  left: 240px;
+  top: 20px;
+  z-index: 13;
+  cursor: pointer;
+  display: block;
+  @include mediaLg {
+    display: none;
   }
-
-
-
-  .btn1 {
-    background: black;
-    position: absolute;
-    left: 240px;
-    top: 20px;
-    z-index: 13;
-    cursor: pointer;
-    display: block;
-    @include mediaLg {
-      display: none;
+  @include mediaXL {
+    display: none;
   }
-  @include  mediaXL{
-  display: none;
+  .line {
+    width: 25px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #fff;
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(0px, 5px);
+    }
+    &:nth-child(2) {
+      transform: rotate(-45deg) translate(0px, -6px);
+    }
   }
-    .line {
-      width: 25px;
-      height: 3px;
-      margin-bottom: 5px;
-      background: #fff;
-      &:nth-child(1) {
-        transform: rotate(45deg) translate(0px, 5px);
-      }
-      &:nth-child(2) {
-        transform: rotate(-45deg) translate(0px, -6px);
-      }
-  }
-  
-  }
-  .navNarrow {
+}
+.navNarrow {
+  @media (max-width: 768px) {
     @include easeOut;
     display: flex;
     flex-direction: column;
-    position: fixed;  
+    position: fixed;
     backface-visibility: hidden;
     z-index: 10003;
-    position: fixed;
     overflow-y: auto;
     width: 275px;
     height: 100%;
@@ -99,58 +93,23 @@
     transform: translate(275px, 0px);
     background: #000;
     height: 100%;
-    .nav_item {
-      padding: 0 1em 0 1em;
-
-    }
-    .nav_link {
-      line-height: 44px;
-      height: 44px;
-      color: #fff;
-      font-weight: 300;
-    }
-    @include mediaLg {
-        display: none;
-    }
-    @include  mediaXL{
-    display: none;
-    }
-    
-   
   }
-  .navNarrow_show {
-    @include easeOut;
-    display: flex;
-    flex-direction: column;
-    position: fixed;  
-    backface-visibility: hidden;
-    z-index: 10003;
-    position: fixed;
-    overflow-y: auto;
-    width: 275px;
-    height: 100%;
-    top: 0px;
-    left: -553px;
-    background: #000;
-    height: 100%;
-    transform: translate(0,0);
-    .nav_item {
-      padding: 0 1em 0 1em;
 
-    }
-   .nav_link {
+  .nav_item {
+    padding: 0 1em 0 1em;
+  }
+
+  .nav_link {
     line-height: 44px;
-     height: 44px;
-     color: #fff;
-     font-weight: 300;
-    
-   }
-    
-    
-    @include mediaLg {
-        display: none;
-    }
-    @include  mediaXL{
-    display: none;
-    }
+    height: 44px;
+    color: #fff;
+    font-weight: 300;
   }
+}
+
+.isClosed {
+  @media (max-width: 768px) {
+    left: -553px;
+    transform: translate(0, 0);
+  }
+}

@@ -1,91 +1,86 @@
-import React, { useState } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import React, { useState } from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
-import menuStyles from './menu.module.scss'
-const Menu =()=> {
-    const data = useStaticQuery(graphql`
-query  {
-  allPrismicHeaderMenu {
-    edges {
-      node {
-        data {
-          body {
-            items {
-              link_name {
-                text
-              }
-              path {
-                id
-                url
+import menuStyles from "./menu.module.scss";
+const Menu = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allPrismicHeaderMenu {
+        edges {
+          node {
+            data {
+              body {
+                items {
+                  link_name {
+                    text
+                  }
+                  path {
+                    id
+                    slug
+                  }
+                }
               }
             }
           }
         }
       }
     }
-  }
-  }
-  
-`)
-const [ open, setOpen ] = useState(false);
+  `);
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <nav>
+        <div className={menuStyles.nav_Wrapp}>
+          <div
+            className={menuStyles.btn}
+            onClick={() => setOpen(!open)}
+            onKeyDown={() => setOpen(!open)}
+            role="button"
+            tabIndex="0"
+          >
+            <div className={menuStyles.line}></div>
+            <div className={menuStyles.line}></div>
+            <div className={menuStyles.line}></div>
+          </div>
 
-    return (
-        <>
-        <nav>
-          <div className={menuStyles.nav_Wrapp}>
-        <div className={menuStyles.btn}
-        onClick={ () => setOpen(!open) }>
-               <div className={menuStyles.line}></div>
-               <div className={menuStyles.line}></div>
-               <div className={menuStyles.line}></div>
-        
-                </div>
-        
-        <ul className={menuStyles.nav_list}>
-          {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map((item)=> {
-            return(
-              <li className={menuStyles.nav_item} key={item.link_name.id}>
-              <Link className={menuStyles.nav_link} to={item.path.url} key={item.link_name.id}>
-              
-                {item.link_name[0].text}
-               
-                </Link>
-                </li>
-            )
-          })}
-                   
-                </ul>
-                
-                <ul className={  open === true ? menuStyles.navNarrow
-                : menuStyles.navNarrow_show}>
-                  <div className={menuStyles.btn1}
-        onClick={ () => setOpen(!open) }>
-          <div className={menuStyles.line}></div>
-               <div className={menuStyles.line}></div>
+          <ul
+            className={
+              open === true
+                ? menuStyles.navNarrow
+                : `${menuStyles.navNarrow} ${menuStyles.isClosed}`
+            }
+          >
+            <div
+              className={menuStyles.btn1}
+              onClick={() => setOpen(!open)}
+              onKeyDown={() => setOpen(!open)}
+              role="button"
+              tabIndex="0"
+            >
+              <div className={menuStyles.line}></div>
+              <div className={menuStyles.line}></div>
+            </div>
+
+            {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map(
+              (item) => {
+                return (
+                  <li className={menuStyles.nav_item} key={item.path.id}>
+                    <Link
+                      className={menuStyles.nav_link}
+                      to={`/${
+                        item.path.slug !== "index-page" ? item.path.slug : ""
+                      }`}
+                    >
+                      {item.link_name[0].text}
+                    </Link>
+                  </li>
+                );
+              }
+            )}
+          </ul>
         </div>
-                
-                
-               
-               
-        
-                
-          {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map((item)=> {
-            return(
-              <li className={menuStyles.nav_item} key={item.link_name.id}>
-              <Link className={menuStyles.nav_link} to={item.path.url} key={item.link_name.id}>
-              
-                {item.link_name[0].text}
-               
-                </Link>
-                </li>
-            )
-          })}
-       
-                   
-                </ul>
-                </div>
-            </nav>
-            </>
-    )
-}
-export default Menu
+      </nav>
+    </>
+  );
+};
+export default Menu;
