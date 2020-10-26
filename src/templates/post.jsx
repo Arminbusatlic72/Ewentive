@@ -1,81 +1,75 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout/Layout"
-import Section2 from "../components/section2/Section2"
-import postStyles from "./post.module.scss"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/Layout";
+import Section2 from "../components/section2/Section2";
+import postStyles from "./post.module.scss";
 const Post = ({ data: { prismicContentItem } }) => {
-  const { data } = prismicContentItem
-  console.log(data)
+  const { data } = prismicContentItem;
+
   return (
     <React.Fragment>
       <Layout>
         <main>
           <div className={postStyles.content_item__container}>
-     
-      <p>{data.activity_type1 }</p>
+            <p>{data.activity_type1}</p>
 
-      <div dangerouslySetInnerHTML={{ __html: data.benefits.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.content_name.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.content_title.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.deliverable.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.long_description.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.quote.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.short_description.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.subtitle.html }} />
-      <div dangerouslySetInnerHTML={{ __html: data.tag_line.html }} />
-      </div>
-      <Section2/>
-      </main>
+            <div dangerouslySetInnerHTML={{ __html: data.benefits.html }} />
+            <div dangerouslySetInnerHTML={{ __html: data.content_name.html }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: data.content_title.html }}
+            />
+            <div dangerouslySetInnerHTML={{ __html: data.deliverable.html }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: data.long_description.html }}
+            />
+            <div dangerouslySetInnerHTML={{ __html: data.quote.html }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: data.short_description.html }}
+            />
+            <div dangerouslySetInnerHTML={{ __html: data.subtitle.html }} />
+            <div dangerouslySetInnerHTML={{ __html: data.tag_line.html }} />
+          </div>
+          <Section2 />
+        </main>
       </Layout>
     </React.Fragment>
-  )
-}
-export default Post
+  );
+};
+export default Post;
 export const pageQuery = graphql`
   query PriscmicContentItemBySlug($uid: String!) {
     prismicContentItem(uid: { eq: $uid }) {
       uid
       data {
-        
-          activity_type1 
-          benefits {
-            html
-            
-          }
-          content_name {
-            html
-            
-          }
-          content_title {
-            html
-            
-          }
-          deliverable {
-            html
-            
-          }
-          long_description {
-            html
-            
-          }
-          quote {
-            html
-            
-          }
-          short_description {
-            html
-            
-          }
-          subtitle {
-            html
-            
-          }
-          tag_line {
-            html
-            
-          }
-        
+        activity_type1
+        benefits {
+          html
+        }
+        content_name {
+          html
+        }
+        content_title {
+          html
+        }
+        deliverable {
+          html
+        }
+        long_description {
+          html
+        }
+        quote {
+          html
+        }
+        short_description {
+          html
+        }
+        subtitle {
+          html
+        }
+        tag_line {
+          html
+        }
       }
     }
   }
-`
+`;

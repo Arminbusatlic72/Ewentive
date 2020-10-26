@@ -1,6 +1,15 @@
+@import "../styles/mixins.scss";
 .content_item__container {
-    // position: relative;
-    background: #FFF;
+  background: #fff;
+  border-radius: 6px;
+  padding: 2em 1em;
+  @include mediaMd {
+    adding: 3em 2em;
+  }
+  @include mediaLg {
     padding: 6em 4em 6em 4em;
-    border-radius: 6px;
+  }
+  @include mediaXL {
+    padding: 6em 4em 6em 4em;
+  }
 }

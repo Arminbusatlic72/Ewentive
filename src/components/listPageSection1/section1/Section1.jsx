@@ -1,25 +1,26 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import section1Styles from "./section1.module.scss";
-import Item from "./Item";
-
+import ListItem from "./ListItem";
 const Section1 = () => {
   const data = useStaticQuery(graphql`
     query {
-      allPrismicIndexPage {
+      allPrismicListPage {
         edges {
           node {
             data {
               body {
-                ... on PrismicIndexPageBodySection11 {
+                ... on PrismicListPageBodyListOfContentItems {
                   id
                   items {
-                    cta_button_caption
-                    cta_link {
-                      url
+                    content_item {
+                      id
                     }
+                    subscribe_button {
+                      slug
+                    }
+                    cta_subscribe_button_caption
                     top_image {
-                      alt
                       localFile {
                         childImageSharp {
                           fluid(maxWidth: 500, quality: 100) {
@@ -28,12 +29,13 @@ const Section1 = () => {
                           }
                         }
                       }
-                    }
-                    content_item {
-                      id
+                      alt
                     }
                   }
                 }
+              }
+              list_page_title {
+                html
               }
             }
           }
@@ -41,13 +43,23 @@ const Section1 = () => {
       }
     }
   `);
+
   return (
     <div>
       <section className={section1Styles.section1}>
+        <div className={section1Styles.heading_wrapp}>
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                data.allPrismicListPage.edges[0].node.data.list_page_title.html,
+            }}
+          />
+        </div>
+
         <div className={section1Styles.item__wrapp}>
-          {data.allPrismicIndexPage.edges[0].node.data.body[1].items.map(
+          {data.allPrismicListPage.edges[0].node.data.body[0].items.map(
             (item) => (
-              <Item cardData={item} key={item.content_item.id} />
+              <ListItem cardData={item} key={item.content_item.id} />
             )
           )}
         </div>

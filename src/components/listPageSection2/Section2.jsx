@@ -1,27 +1,30 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import section2Styles from "./section2.module.scss";
-import IconItem from "./IconItem";
-const Section1 = () => {
+import ListPageIconItem from "./section2/ListPageIconItem";
+const Section2 = () => {
   const data = useStaticQuery(graphql`
     query {
-      allPrismicIndexPage {
+      allPrismicListPage {
         edges {
           node {
             data {
+              list_page_title {
+                html
+              }
               body {
-                ... on PrismicIndexPageBodySection3 {
+                ... on PrismicListPageBodyListOfPastEvents {
                   id
                   items {
-                    extra_content {
-                      id
-                      uid
-                    }
-                    link_to_detail {
+                    content_item {
                       id
                       slug
                     }
-                    font_awesome_name
+                    icon_font_awesome
+                    link_caption
+                    link_to_recording_or_past_event {
+                      url
+                    }
                   }
                 }
               }
@@ -36,9 +39,9 @@ const Section1 = () => {
     <div>
       <section className={section2Styles.section2}>
         <div className={section2Styles.item__wrapp}>
-          {data.allPrismicIndexPage.edges[0].node.data.body[2].items.map(
+          {data.allPrismicListPage.edges[0].node.data.body[1].items.map(
             (item) => (
-              <IconItem cardData={item} key={item.extra_content.id} />
+              <ListPageIconItem cardData={item} key={item.content_item.id} />
             )
           )}
         </div>
@@ -46,4 +49,4 @@ const Section1 = () => {
     </div>
   );
 };
-export default Section1;
+export default Section2;

@@ -1,0 +1,24 @@
+@import "../../../styles/mixins.scss";
+.section1 {
+  padding: 2rem 0;
+  color: #fff;
+  text-align: center;
+}
+.heading_wrapp {
+  margin-bottom: 6em;
+  h1 {
+    font-weight: 300;
+    @include mediaLg {
+      font-size: 1.5em;
+    }
+    @include mediaXL {
+      font-size: 1.75em;
+    }
+  }
+}
+.item__wrapp {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+}

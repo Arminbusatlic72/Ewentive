@@ -1,30 +1,27 @@
 import React from "react";
-import { Link } from "gatsby";
-import iconItemStyles from "./iconItem.module.scss";
-const IconItem = (props) => {
+import iconItemStyles from "./listPageIconItem.module.scss";
+const ListPageIconItem = (props) => {
   let item = props.cardData;
+
   return (
     <>
-      <figure
-        className={iconItemStyles.iconItem__card}
-        key={item.link_to_detail.id}
-      >
-        <i className={`fas fa-3x ${item.font_awesome_name}`}></i>
-        <h3>{item.extra_content.uid}</h3>
+      <figure className={iconItemStyles.iconItem__card}>
+        <i className={`fas fa-3x ${item.icon_font_awesome}`}></i>
+        <h3>{item.content_item.slug}</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
           quibusdam voluptates eaque nostrum voluptate modi repellat quas
           asperiores non sapiente illum impedit voluptatum vero dolor
           exercitationem ipsam harum, porro cumque?
         </p>
-        <Link
+        <a
           className={iconItemStyles.section__link}
-          to={`/${item.link_to_detail.slug}`}
+          href={`/${item.link_to_recording_or_past_event.url}`}
         >
           Read more...
-        </Link>
+        </a>
       </figure>
     </>
   );
 };
-export default IconItem;
+export default ListPageIconItem;

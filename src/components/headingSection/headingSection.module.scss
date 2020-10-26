@@ -1,28 +1,17 @@
 @import "../../styles/mixins.scss";
 .heading__section {
-    text-align: center;
-    color: #fff;
-    // padding: 0em 4em;
-    margin-bottom: 6em;
-    h1 {
-        font-weight: 300;
-        
-        font-size: 1.1em;
-        line-height: 1.75em;
-        @include mediaLg {
-    font-size: 1.50em;
-   
-
-        }
-        @include mediaXL {
-            font-size: 1.75em;
-    
-
-        }
+  text-align: center;
+  color: #fff;
+  margin-bottom: 6em;
+  h1 {
+    font-weight: 300;
+    font-size: 1.1em;
+    line-height: 1.75em;
+    @include mediaLg {
+      font-size: 1.5em;
     }
-    
-}
-.medium {
-    padding: 0.80em 2em;
-    font-size: 1.6em;
+    @include mediaXL {
+      font-size: 1.75em;
+    }
+  }
 }

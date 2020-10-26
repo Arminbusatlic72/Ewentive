@@ -42,7 +42,9 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
           content_item: require('./src/schemas/content_item.json'),
-          index_page: require('./src/schemas/index_page.json')
+          index_page: require('./src/schemas/index_page.json'),
+          menu: require('./src/schemas/menu.json'),
+          list_page: require('./src/schemas/list_page.json')
         },
         shouldDownloadImage: ({ node, key, value }) => {
           // Return true to download the image or false to skip.
