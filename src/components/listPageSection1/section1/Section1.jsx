@@ -23,9 +23,8 @@ const Section1 = () => {
                     top_image {
                       localFile {
                         childImageSharp {
-                          fluid(maxWidth: 500, quality: 100) {
-                            ...GatsbyImageSharpFluid
-                            ...GatsbyImageSharpFluidLimitPresentationSize
+                          fluid(maxWidth: 600, quality: 100) {
+                            ...GatsbyImageSharpFluid_withWebp
                           }
                         }
                       }
