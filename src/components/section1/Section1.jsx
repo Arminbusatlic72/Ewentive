@@ -30,6 +30,21 @@ const Section1 = () => {
                     }
                     content_item {
                       id
+                      slug
+                      document {
+                        ... on PrismicContentItem {
+                          data {
+                            activity_type1
+                            short_description {
+                              html
+                              text
+                            }
+                            content_title {
+                              html
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -40,6 +55,7 @@ const Section1 = () => {
       }
     }
   `);
+  console.log(data);
   return (
     <div>
       <section className={section1Styles.section1}>

@@ -16,6 +16,21 @@ const Section1 = () => {
                     extra_content {
                       id
                       uid
+                      document {
+                        ... on PrismicContentItem {
+                          id
+                          data {
+                            short_description {
+                              html
+                              text
+                            }
+                            content_title {
+                              html
+                              text
+                            }
+                          }
+                        }
+                      }
                     }
                     link_to_detail {
                       id

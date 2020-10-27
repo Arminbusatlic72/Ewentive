@@ -6,7 +6,7 @@ import Button from "../button/Button";
 
 const Item = (props) => {
   let item = props.cardData;
-  console.log(item);
+
   return (
     <>
       <figure className={itemStyles.card__item}>
@@ -16,9 +16,11 @@ const Item = (props) => {
           alt={item.top_image.alt}
         />
         <div className={itemStyles.item__body}>
-          <p>Website development and integration with CRM and analytics.</p>
-          <h4>hands-on consulting</h4>
-          <Button link={item.cta_link.url}>{item.cta_button_caption}</Button>
+          <p>{item.content_item.document.data.short_description.text}</p>
+          <h4>{item.content_item.document.data.activity_type1}</h4>
+          <Button link={item.content_item.slug}>
+            {item.cta_button_caption}
+          </Button>
         </div>
       </figure>
     </>

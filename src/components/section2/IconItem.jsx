@@ -10,13 +10,8 @@ const IconItem = (props) => {
         key={item.link_to_detail.id}
       >
         <i className={`fas fa-3x ${item.font_awesome_name}`}></i>
-        <h3>{item.extra_content.uid}</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-          quibusdam voluptates eaque nostrum voluptate modi repellat quas
-          asperiores non sapiente illum impedit voluptatum vero dolor
-          exercitationem ipsam harum, porro cumque?
-        </p>
+        <h3>{item.extra_content.document.data.content_title.text}</h3>
+        <p>{item.extra_content.document.data.short_description.text}</p>
         <Link
           className={iconItemStyles.section__link}
           to={`/${item.link_to_detail.slug}`}

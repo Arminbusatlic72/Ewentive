@@ -8,6 +8,10 @@ require("dotenv").config({
 })
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Ewentive company official website",
+    author: "Armin Busatlic",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,31 +25,28 @@ module.exports = {
   `gatsby-transformer-sharp`, 
   `gatsby-plugin-sharp`,
   `gatsby-source-fontawesome`,
+  `gatsby-plugin-react-helmet`,
   {
-    resolve: `gatsby-plugin-google-fonts`,
+    resolve: 'gatsby-plugin-web-font-loader',
     options: {
-      fonts: [
-        `Raleway`,
-        `sans-serif\:300,400,700` // you can also specify font weights and styles
-      ],
-      display: 'swap'
+      google: {
+       
+        families: ['Raleway:300;400;700']
+
+      }
     }
   },
   // {
-  //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+  //   resolve: `gatsby-plugin-google-fonts`,
   //   options: {
   //     fonts: [
-  //       {
-  //         family: `Raleway`,
-  //         variants: [`300`,`400`, `700`]
-  //       },
-  //       {
-  //         family: `Raleway`,
-  //         subsets: [`latin`]
-  //       },
+  //       `Raleway`,
+  //       `sans-serif\:300,400,700` // you can also specify font weights and styles
   //     ],
-  //   },
+  //     display: 'swap'
+  //   }
   // },
+  
     {
       resolve: 'gatsby-source-prismic',
       options: {
