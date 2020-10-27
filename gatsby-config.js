@@ -22,20 +22,30 @@ module.exports = {
   `gatsby-plugin-sharp`,
   `gatsby-source-fontawesome`,
   {
-    resolve: `gatsby-plugin-prefetch-google-fonts`,
+    resolve: `gatsby-plugin-google-fonts`,
     options: {
       fonts: [
-        {
-          family: `Raleway`,
-          variants: [`300`,`400`, `700`]
-        },
-        {
-          family: `Raleway`,
-          subsets: [`latin`]
-        },
+        `Raleway`,
+        `sans-serif\:300,400,700` // you can also specify font weights and styles
       ],
-    },
+      display: 'swap'
+    }
   },
+  // {
+  //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+  //   options: {
+  //     fonts: [
+  //       {
+  //         family: `Raleway`,
+  //         variants: [`300`,`400`, `700`]
+  //       },
+  //       {
+  //         family: `Raleway`,
+  //         subsets: [`latin`]
+  //       },
+  //     ],
+  //   },
+  // },
     {
       resolve: 'gatsby-source-prismic',
       options: {
