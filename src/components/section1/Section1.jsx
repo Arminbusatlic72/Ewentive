@@ -55,7 +55,7 @@ const Section1 = () => {
       }
     }
   `);
-  console.log(data);
+
   return (
     <div>
       <section className={section1Styles.section1}>

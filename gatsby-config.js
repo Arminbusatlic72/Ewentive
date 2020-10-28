@@ -26,26 +26,32 @@ module.exports = {
   `gatsby-plugin-sharp`,
   `gatsby-source-fontawesome`,
   `gatsby-plugin-react-helmet`,
-  {
-    resolve: 'gatsby-plugin-web-font-loader',
-    options: {
-      google: {
-       
-        families: ['Raleway:300;400;700']
-
-      }
-    }
-  },
   // {
-  //   resolve: `gatsby-plugin-google-fonts`,
+  //   resolve: `gatsby-plugin-prefetch-google-fonts`,
   //   options: {
   //     fonts: [
-  //       `Raleway`,
-  //       `sans-serif\:300,400,700` // you can also specify font weights and styles
+  //       {
+  //         family: `Relway`,
+  //         subsets: [`latin`],
+  //       },
+  //       {
+  //         family: `Relway`,
+  //         variants: [`300`,`400`, `700`]
+  //       },
   //     ],
-  //     display: 'swap'
-  //   }
+  //   },
   // },
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Raleway`,
+        `sans serif\:300,400,700` // you can also specify font weights and styles
+      ],
+      display: 'swap'
+    }
+  },
+  
   
     {
       resolve: 'gatsby-source-prismic',

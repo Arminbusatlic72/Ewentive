@@ -16,7 +16,7 @@ const ListPageIconItem = (props) => {
         </p>
         <a
           className={iconItemStyles.section__link}
-          href={`/${item.link_to_recording_or_past_event.url}`}
+          href={item.link_to_recording_or_past_event.url}
         >
           Read more...
         </a>

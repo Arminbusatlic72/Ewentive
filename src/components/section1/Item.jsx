@@ -1,5 +1,5 @@
 import React from "react";
-
+import Dotdotdot from "react-dotdotdot";
 import itemStyles from "./item.module.scss";
 import Img from "gatsby-image";
 import Button from "../button/Button";
@@ -16,8 +16,16 @@ const Item = (props) => {
           alt={item.top_image.alt}
         />
         <div className={itemStyles.item__body}>
-          <p>{item.content_item.document.data.short_description.text}</p>
-          <h4>{item.content_item.document.data.activity_type1}</h4>
+          <Dotdotdot clamp={3}>
+            <p>{item.content_item.document.data.short_description.text}</p>
+          </Dotdotdot>
+          <h4>
+            {item.content_item.document.data.activity_type1 ? (
+              item.content_item.document.data.activity_type1
+            ) : (
+              <span>&nbsp;</span>
+            )}
+          </h4>
           <Button link={item.content_item.slug}>
             {item.cta_button_caption}
           </Button>
