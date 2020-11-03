@@ -1,11 +1,8 @@
 /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
 @import "./variables.scss";
-
-// $fa-font-path: "~font-awesome/fonts";
-// @import '~font-awesome/scss/font-awesome.scss';
-// Import font awesome
 @import "~@fortawesome/fontawesome-free/css/all.css";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
 html {
   color: #555555;
   font-family: "Raleway", sans-serif;

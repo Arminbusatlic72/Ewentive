@@ -26,21 +26,7 @@ module.exports = {
   `gatsby-plugin-sharp`,
   `gatsby-source-fontawesome`,
   `gatsby-plugin-react-helmet`,
-  // {
-  //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-  //   options: {
-  //     fonts: [
-  //       {
-  //         family: `Relway`,
-  //         subsets: [`latin`],
-  //       },
-  //       {
-  //         family: `Relway`,
-  //         variants: [`300`,`400`, `700`]
-  //       },
-  //     ],
-  //   },
-  // },
+  
   {
     resolve: `gatsby-plugin-google-fonts`,
     options: {
@@ -52,7 +38,6 @@ module.exports = {
     }
   },
   
-  
     {
       resolve: 'gatsby-source-prismic',
       options: {
@@ -63,7 +48,7 @@ module.exports = {
         schemas: {
           content_item: require('./src/schemas/content_item.json'),
           index_page: require('./src/schemas/index_page.json'),
-          menu: require('./src/schemas/menu.json'),
+          // menu: require('./src/schemas/menu.json'),
           list_page: require('./src/schemas/list_page.json')
         },
         shouldDownloadImage: ({ node, key, value }) => {

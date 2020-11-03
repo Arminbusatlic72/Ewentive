@@ -22,6 +22,7 @@
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.3.21",
     "gatsby-plugin-sharp": "^2.6.43",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.37",
     "gatsby-source-fontawesome": "0.0.1",
     "gatsby-source-prismic": "^3.2.1",
