@@ -1,8 +1,8 @@
-
 .section2 {
-    padding: 2rem 0;
-   }
-   .item__wrapp {
-       display: flex;
-       justify-content: space-between;
-   }
+  padding: 2rem 0;
+}
+.item__wrapp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
