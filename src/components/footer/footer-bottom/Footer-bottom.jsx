@@ -25,7 +25,6 @@ const FooterBottom = () => {
       }
     }
   `);
-  console.log(data);
 
   return (
     <div className={footerBottomStyles.footer__bottom}>

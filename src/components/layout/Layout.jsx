@@ -3,7 +3,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import layoutStyles from "./layout.module.scss";
 import "../../styles/index.scss";
-import BackgroundSection from "../backgroundSection/BackgroundSection";
+import BackgroundSection from "../BackgroundSection/BackgroundSection";
 const Layout = (props) => {
   return (
     <div className={layoutStyles.wrapper}>

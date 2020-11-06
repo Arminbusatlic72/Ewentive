@@ -31,7 +31,6 @@ const HeadingSection = () => {
       }
     }
   `);
-  console.log(data);
 
   const sectionData = data.allPrismicIndexPage.edges[0].node.data.body[0];
 
