@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import ButtonMd from "../button/ButtonMd";
+import ButtonMd from "../../button/ButtonMd";
 import HeadingSectionStyles from "./headingSection.module.scss";
 const HeadingSection = () => {
   const data = useStaticQuery(graphql`
@@ -20,7 +20,7 @@ const HeadingSection = () => {
                   items {
                     cta_button_capture
                     cta_button_link {
-                      url
+                      uid
                     }
                   }
                 }
@@ -31,6 +31,7 @@ const HeadingSection = () => {
       }
     }
   `);
+  console.log(data);
 
   const sectionData = data.allPrismicIndexPage.edges[0].node.data.body[0];
 
@@ -40,7 +41,7 @@ const HeadingSection = () => {
         <div
           dangerouslySetInnerHTML={{ __html: sectionData.primary.title.html }}
         />
-        <ButtonMd link={sectionData.items[0].cta_button_link.url}>
+        <ButtonMd link={`/${sectionData.items[0].cta_button_link.uid}`}>
           {sectionData.items[0].cta_button_capture}
         </ButtonMd>
       </section>

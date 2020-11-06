@@ -14,6 +14,14 @@
         "label" : "Content name",
         "placeholder" : "Name of the content item"
       }
+    },
+    "content_type" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Content", "Blog", "Event" ],
+        "label" : "Content type",
+        "placeholder" : "Content type"
+      }
     }
   },
   "Section 1" : {
@@ -46,7 +54,7 @@
     "activity_type1" : {
       "type" : "Select",
       "config" : {
-        "options" : [ "Consulting", "Hands-on consulting", "Workshop", "Webinar" ],
+        "options" : [ "Consulting", "Hands-on consulting", "Workshop", "Webinar", "Recording" ],
         "default_value" : "Consulting",
         "label" : "Activity type",
         "placeholder" : "Activity type"
@@ -111,6 +119,13 @@
       "config" : {
         "label" : "Time of event",
         "placeholder" : "time of event"
+      }
+    },
+    "duration_in_hours" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Duration in hours",
+        "placeholder" : "Duration in hours"
       }
     },
     "subscribe_link" : {

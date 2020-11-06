@@ -16,6 +16,7 @@ const Menu = () => {
                   path {
                     id
                     slug
+                    uid
                   }
                 }
               }
@@ -25,7 +26,7 @@ const Menu = () => {
       }
     }
   `);
-  console.log(data);
+
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -68,7 +69,7 @@ const Menu = () => {
                     <Link
                       className={menuStyles.nav_link}
                       to={`/${
-                        item.path.slug !== "index-page" ? item.path.slug : ""
+                        item.path.uid !== "index-page" ? item.path.uid : ""
                       }`}
                     >
                       {item.link_name[0].text}

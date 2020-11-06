@@ -24,7 +24,6 @@ module.exports = {
   `gatsby-plugin-sass`,
   `gatsby-transformer-sharp`, 
   `gatsby-plugin-sharp`,
-  `gatsby-source-fontawesome`,
   `gatsby-plugin-react-helmet`,
   
   {
@@ -46,10 +45,11 @@ module.exports = {
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
+          menu: require('./src/schemas/menu.json'),
           content_item: require('./src/schemas/content_item.json'),
           index_page: require('./src/schemas/index_page.json'),
-          // menu: require('./src/schemas/menu.json'),
-          list_page: require('./src/schemas/list_page.json')
+          list_page: require('./src/schemas/list_page.json'),
+          no_sidebar_page: require('./src/schemas/no_sidebar.json')
         },
         shouldDownloadImage: ({ node, key, value }) => {
           // Return true to download the image or false to skip.
@@ -61,5 +61,6 @@ module.exports = {
         
       },
     }
+    
   ],
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 import listItemStyles from "./listItem.module.scss";
 import Img from "gatsby-image";
-import Button from "../../button/Button";
+import Button from "../../../button/Button";
 
 const ListItem = (props) => {
   let item = props.cardData;

@@ -34,6 +34,10 @@
           "footer_links" : [ {
             "name" : "footer_link",
             "display" : "Footer link"
+          } ],
+          "social_media" : [ {
+            "name" : "social",
+            "display" : "social"
           } ]
         },
         "choices" : {
@@ -86,68 +90,7 @@
             "description" : "Footer links",
             "icon" : "insert_link",
             "display" : "list",
-            "non-repeat" : {
-              "linkedin" : {
-                "type" : "Link",
-                "config" : {
-                  "allowTargetBlank" : true,
-                  "label" : "LinkedIN",
-                  "placeholder" : "LinkedIN"
-                }
-              },
-              "linkedin_font_awesome" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "LinkedIN font awesome",
-                  "placeholder" : "LinkedIN font awesome"
-                }
-              },
-              "twitter" : {
-                "type" : "Link",
-                "config" : {
-                  "allowTargetBlank" : true,
-                  "label" : "Twitter",
-                  "placeholder" : "Twitter"
-                }
-              },
-              "twitter_font_awesome" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Twitter font awesome",
-                  "placeholder" : "Twitter font awesome"
-                }
-              },
-              "youtube" : {
-                "type" : "Link",
-                "config" : {
-                  "allowTargetBlank" : true,
-                  "label" : "YouTube",
-                  "placeholder" : "YouTube"
-                }
-              },
-              "youtube_font_awesome" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "YouTube font awesome",
-                  "placeholder" : "YouTube font awesome"
-                }
-              },
-              "instagram" : {
-                "type" : "Link",
-                "config" : {
-                  "allowTargetBlank" : true,
-                  "label" : "Instagram",
-                  "placeholder" : "Instagram"
-                }
-              },
-              "instagram_font_awesome" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Instagram font awesome",
-                  "placeholder" : "Instagram font awesome"
-                }
-              }
-            },
+            "non-repeat" : { },
             "repeat" : {
               "footer_link" : {
                 "type" : "Link",
@@ -162,6 +105,37 @@
                 "config" : {
                   "label" : "Footer link capture",
                   "placeholder" : "Footer link capture"
+                }
+              }
+            }
+          },
+          "social_media" : {
+            "type" : "Slice",
+            "fieldset" : "Social Media",
+            "description" : "Links to Social Media",
+            "icon" : "supervisor_account",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "social_name" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Social Name",
+                  "placeholder" : "Social Media Name"
+                }
+              },
+              "social_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Social Icon",
+                  "placeholder" : "Social Media Icon Class"
+                }
+              },
+              "social_link" : {
+                "type" : "Link",
+                "config" : {
+                  "label" : "Social Link",
+                  "placeholder" : "Social Media Link"
                 }
               }
             }

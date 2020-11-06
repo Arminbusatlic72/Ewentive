@@ -14,9 +14,9 @@ const IconItem = (props) => {
         <p>{item.extra_content.document.data.short_description.text}</p>
         <Link
           className={iconItemStyles.section__link}
-          to={`/${item.link_to_detail.slug}`}
+          to={`/${item.link_to_detail.uid}`}
         >
-          Read more...
+          {item.link_caption + `...`}
         </Link>
       </figure>
     </>

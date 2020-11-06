@@ -80,6 +80,7 @@
 .navNarrow {
   @media (max-width: 768px) {
     @include easeOut;
+    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
     position: fixed;

@@ -2,7 +2,7 @@ import React from "react";
 import Dotdotdot from "react-dotdotdot";
 import itemStyles from "./item.module.scss";
 import Img from "gatsby-image";
-import Button from "../button/Button";
+import Button from "../../button/Button";
 
 const Item = (props) => {
   let item = props.cardData;
@@ -26,7 +26,7 @@ const Item = (props) => {
               <span>&nbsp;</span>
             )}
           </h4>
-          <Button link={item.content_item.slug}>
+          <Button link={item.content_item.uid}>
             {item.cta_button_caption}
           </Button>
         </div>

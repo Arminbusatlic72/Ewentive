@@ -1,6 +1,6 @@
 import React from "react";
 import footerTopStyles from "./footerTop.module.scss";
-import ContactForm from "../footer-bottom/ContactForm";
+import ContactForm from "./contact-form/ContactForm";
 const FooterTop = () => {
   return (
     <div className={footerTopStyles.footer__top}>

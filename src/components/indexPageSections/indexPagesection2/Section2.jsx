@@ -13,6 +13,7 @@ const Section1 = () => {
                 ... on PrismicIndexPageBodySection3 {
                   id
                   items {
+                    link_caption
                     extra_content {
                       id
                       uid
@@ -35,6 +36,7 @@ const Section1 = () => {
                     link_to_detail {
                       id
                       slug
+                      uid
                     }
                     font_awesome_name
                   }

@@ -1,4 +1,13 @@
 @import "../styles/mixins.scss";
+.section {
+  padding: 2rem 0;
+}
+.item__wrapp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .content_item__container {
   background: #fff;
   border-radius: 6px;

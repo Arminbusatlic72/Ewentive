@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import section2Styles from "./section2.module.scss";
-import ListPageIconItem from "./section2/ListPageIconItem";
+import ListPageIconItem from "./contentItem/ListPageIconItem";
 const Section2 = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -9,21 +9,33 @@ const Section2 = () => {
         edges {
           node {
             data {
-              list_page_title {
-                html
-              }
               body {
                 ... on PrismicListPageBodyListOfPastEvents {
                   id
                   items {
-                    content_item {
-                      id
-                      slug
-                    }
                     icon_font_awesome
                     link_caption
                     link_to_recording_or_past_event {
+                      uid
+                    }
+                    link_to_recording_or_past_event {
                       url
+                    }
+                    content_item {
+                      uid
+                      document {
+                        ... on PrismicContentItem {
+                          id
+                          data {
+                            content_title {
+                              text
+                            }
+                            short_description {
+                              text
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }

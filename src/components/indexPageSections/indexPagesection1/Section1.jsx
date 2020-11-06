@@ -31,6 +31,7 @@ const Section1 = () => {
                     content_item {
                       id
                       slug
+                      uid
                       document {
                         ... on PrismicContentItem {
                           data {
