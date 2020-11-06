@@ -19,7 +19,7 @@ const ListPageIconItem = (props) => {
       >
         {item.link_caption}
       </Link>
-      <a href="{item.link_to_recording_or_past_event.url}">See more</a>
+      <a href={item.link_to_recording_or_past_event.url}>See more</a>
     </figure>
   );
 };
