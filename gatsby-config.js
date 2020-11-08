@@ -14,6 +14,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Raleway`,
+          `sans serif\:300,400,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -27,16 +37,17 @@ module.exports = {
   `gatsby-plugin-react-helmet`,
   
   {
-    resolve: `gatsby-plugin-google-fonts`,
+    resolve: "gatsby-plugin-google-tagmanager",
     options: {
-      fonts: [
-        `Raleway`,
-        `sans serif\:300,400,700` // you can also specify font weights and styles
-      ],
-      display: 'swap'
-    }
+      id: "GTM-5DRD8BV",
+
+      // Include GTM in development.
+      //
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: false,
+
+    },
   },
-  
     {
       resolve: 'gatsby-source-prismic',
       options: {

@@ -1,4 +1,5 @@
 import React from "react"
+import { withPreview } from 'gatsby-source-prismic'
 import Layout from "../components/layout/Layout"
 import Head from "../components/head/Head"
 import Section1 from "../components/listPageSections/listPageSection1/section1/Section1"
@@ -17,4 +18,4 @@ const List = () => {
         </>
     )
 }
-export default List
+export default withPreview(List)

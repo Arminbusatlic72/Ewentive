@@ -1,4 +1,5 @@
 import React from "react"
+import { withPreview } from 'gatsby-source-prismic'
 import Layout from "../components/layout/Layout"
 import Head from "../components/head/Head"
 import HeadingSection from "../components/indexPageSections/indexPageheadingSection/HeadingSection"
@@ -20,4 +21,4 @@ const IndexPage = () => {
     </main>
       </Layout></>)
 }
-export default IndexPage
+export default withPreview(IndexPage) 

@@ -6,15 +6,19 @@ import Button from "../../../button/Button";
 
 const ListItem = (props) => {
   let item = props.cardData;
-  console.log(item);
+  const imageData = item.top_image.localFile
+    ? item.top_image.localFile.childImageSharp.fluid
+    : null;
   return (
     <>
       <figure className={listItemStyles.card__item}>
-        <Img
-          className={listItemStyles.img}
-          fluid={item.top_image.localFile.childImageSharp.fluid}
-          alt={item.top_image.alt}
-        />
+        {imageData !== null && (
+          <Img
+            className={listItemStyles.img}
+            fluid={imageData}
+            alt={item.top_image.alt}
+          />
+        )}
         <div className={listItemStyles.item__body}>
           <p>Website development and integration with CRM and analytics.</p>
           <h4>hands-on consulting</h4>

@@ -19,6 +19,7 @@ const Head = ({ title }) => {
       }
     }
   `);
+  console.log(data);
   const metaData = data.allPrismicIndexPage.edges[0].node.data;
 
   return (

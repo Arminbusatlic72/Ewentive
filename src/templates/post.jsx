@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { withPreview } from "gatsby-source-prismic";
 import Layout from "../components/layout/Layout";
 import Head from "../components/head/Head";
 // import Section2 from "../components/section2/Section2";
@@ -39,7 +40,7 @@ const Post = ({ data: { prismicContentItem } }) => {
     </React.Fragment>
   );
 };
-export default Post;
+export default withPreview(Post);
 export const pageQuery = graphql`
   query PriscmicContentItemBySlug($uid: String!) {
     prismicContentItem(uid: { eq: $uid }) {

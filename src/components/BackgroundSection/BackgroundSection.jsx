@@ -26,17 +26,23 @@ const BackgroundSection = ({ className }) => {
       }
     }
   `);
-  const imageData =
-    data.allPrismicIndexPage.edges[0].node.data.background_image.localFile
-      .childImageSharp.fluid;
+  const imageData = data.allPrismicIndexPage.edges[0].node.data.background_image
+    .localFile
+    ? data.allPrismicIndexPage.edges[0].node.data.background_image.localFile
+        .childImageSharp.fluid
+    : null;
 
   return (
-    <BackgroundImage
-      Tag="section"
-      className={backgrounSectionStyles.backgroundSection}
-      fluid={imageData}
-      backgroundColor={`#040e18`}
-    ></BackgroundImage>
+    <>
+      {imageData !== null && (
+        <BackgroundImage
+          Tag="section"
+          className={backgrounSectionStyles.backgroundSection}
+          fluid={imageData}
+          backgroundColor={`#040e18`}
+        />
+      )}
+    </>
   );
 };
 
