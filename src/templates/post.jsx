@@ -34,7 +34,6 @@ const Post = ({ data: { prismicContentItem } }) => {
             <div dangerouslySetInnerHTML={{ __html: data.subtitle.html }} />
             <div dangerouslySetInnerHTML={{ __html: data.tag_line.html }} />
           </div>
-          {/* <Section2 /> */}
         </main>
       </Layout>
     </React.Fragment>
