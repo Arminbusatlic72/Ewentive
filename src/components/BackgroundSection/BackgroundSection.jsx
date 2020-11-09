@@ -15,7 +15,7 @@ const BackgroundSection = ({ className }) => {
                 localFile {
                   childImageSharp {
                     fluid(quality: 90, maxWidth: 1920) {
-                      ...GatsbyImageSharpFluid_withWebp
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
                     }
                   }
                 }
