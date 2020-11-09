@@ -13,16 +13,18 @@ module.exports = {
     author: "Armin Busatlic",
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Raleway`,
-          `sans serif\:300,400,700` // you can also specify font weights and styles
-        ],
-        display: 'swap'
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `Raleway`,
+    //       `sans serif\:300,400,700` // you can also specify font weights and styles
+    //     ],
+    //     display: 'swap'
+    //   }
+    // },
+    `gatsby-plugin-preload-fonts`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
