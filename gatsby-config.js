@@ -16,6 +16,7 @@ module.exports = {
   
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-preact`,
     {
       resolve: "gatsby-plugin-netlify-cache",
       options: {
