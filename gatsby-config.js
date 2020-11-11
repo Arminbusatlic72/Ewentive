@@ -14,7 +14,6 @@ module.exports = {
   },
   plugins: [
   
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-preact`,
     {
