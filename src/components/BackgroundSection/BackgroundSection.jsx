@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import backgrounSectionStyles from "./backgroundSection.module.scss";
-// import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
 
 const BackgroundSection = ({ className }) => {
@@ -27,7 +26,7 @@ const BackgroundSection = ({ className }) => {
       }
     }
   `);
-  console.log(data);
+
   const imageData = data.allPrismicIndexPage.edges[0].node.data.background_image
     .localFile
     ? data.allPrismicIndexPage.edges[0].node.data.background_image.localFile
