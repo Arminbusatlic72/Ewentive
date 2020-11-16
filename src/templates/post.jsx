@@ -3,11 +3,10 @@ import { graphql } from "gatsby";
 import { withPreview } from "gatsby-source-prismic";
 import Layout from "../components/layout/Layout";
 import Head from "../components/head/Head";
-// import Section2 from "../components/section2/Section2";
 import postStyles from "./post.module.scss";
 const Post = ({ data: { prismicContentItem } }) => {
   const { data } = prismicContentItem;
-
+  console.log(data);
   return (
     <React.Fragment>
       <Layout>

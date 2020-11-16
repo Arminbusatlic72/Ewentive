@@ -13,12 +13,12 @@
   border-radius: 6px;
   padding: 2em;
   @include mediaMd {
-    adding: 3em 2em;
+    padding: 2em 2em;
   }
   @include mediaLg {
-    padding: 6em 4em 6em 4em;
+    padding: 2em 4em 6em 4em;
   }
   @include mediaXL {
-    padding: 6em 4em 6em 4em;
+    padding: 2em 4em 6em 4em;
   }
 }

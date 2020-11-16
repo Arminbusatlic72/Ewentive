@@ -13,35 +13,27 @@ const NoSideBarPost = ({ data: { prismicNoSidebarPage } }) => {
         <main>
           <div className={postStyles.content_item__container}>
             <section className={postStyles.section}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html:
+                    data.body[0].items[0].no_sidebar_content.document.data
+                      .content_title.html,
+                }}
+              />
               <p>
                 {
                   data.body[0].items[0].no_sidebar_content.document.data
                     .activity_type1
                 }
               </p>
-
               <div
                 dangerouslySetInnerHTML={{
                   __html:
                     data.body[0].items[0].no_sidebar_content.document.data
-                      .benefits.html,
-                }}
-              />
-              <div
-                dangerouslySetInnerHTML={{
-                  __html:
-                    data.body[0].items[0].no_sidebar_content.document.data
-                      .content_name.html,
+                      .short_description.html,
                 }}
               />
 
-              <div
-                dangerouslySetInnerHTML={{
-                  __html:
-                    data.body[0].items[0].no_sidebar_content.document.data
-                      .deliverable.html,
-                }}
-              />
               <div
                 dangerouslySetInnerHTML={{
                   __html:
@@ -54,20 +46,6 @@ const NoSideBarPost = ({ data: { prismicNoSidebarPage } }) => {
                   __html:
                     data.body[0].items[0].no_sidebar_content.document.data.quote
                       .html,
-                }}
-              />
-              <div
-                dangerouslySetInnerHTML={{
-                  __html:
-                    data.body[0].items[0].no_sidebar_content.document.data
-                      .short_description.html,
-                }}
-              />
-              <div
-                dangerouslySetInnerHTML={{
-                  __html:
-                    data.body[0].items[0].no_sidebar_content.document.data
-                      .subtitle.html,
                 }}
               />
             </section>
