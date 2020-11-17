@@ -84,24 +84,15 @@ export const pageQuery = graphql`
                       date_of_event(fromNow: false)
                       time_of_event
                       duration_in_hours
-                      benefits {
-                        html
-                      }
-                      content_name {
-                        html
-                      }
+
                       content_title {
                         html
                       }
-                      deliverable {
-                        html
-                      }
+
                       long_description {
                         html
                       }
-                      place {
-                        html
-                      }
+
                       quote {
                         html
                       }
@@ -110,9 +101,6 @@ export const pageQuery = graphql`
                       }
                       subscribe_link {
                         uid
-                      }
-                      subtitle {
-                        html
                       }
                     }
                   }

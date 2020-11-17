@@ -62,7 +62,7 @@ const Menu = () => {
               <div className={menuStyles.line}></div>
             </div>
 
-            {data.allPrismicHeaderMenu.edges[1].node.data.body[0].items.map(
+            {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map(
               (item) => {
                 return (
                   <li className={menuStyles.nav_item} key={item.path.id}>

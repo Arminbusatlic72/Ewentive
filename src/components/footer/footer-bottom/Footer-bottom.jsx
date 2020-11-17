@@ -29,18 +29,18 @@ const FooterBottom = () => {
   return (
     <div className={footerBottomStyles.footer__bottom}>
       <p>
-        {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items[0]
+        {data.allPrismicHeaderMenu.edges[1].node.data.body[0].items[0]
           .footer_link_capture + ` `}
 
         <span>
           {
-            data.allPrismicHeaderMenu.edges[0].node.data.body[0].items[1]
+            data.allPrismicHeaderMenu.edges[1].node.data.body[0].items[1]
               .footer_link_capture
           }
         </span>
       </p>
       <ul className={footerBottomStyles.social_media_menu}>
-        {data.allPrismicHeaderMenu.edges[0].node.data.body[1].items.map(
+        {data.allPrismicHeaderMenu.edges[1].node.data.body[1].items.map(
           (item) => (
             <Icon menuData={item} key={item.social_name} />
           )

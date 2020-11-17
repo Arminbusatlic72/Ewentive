@@ -37,7 +37,6 @@ const BackgroundSection = ({ className }) => {
     <>
       {imageData !== null && (
         <Img
-          Tag="section"
           className={backgrounSectionStyles.backgroundSection}
           fluid={imageData}
           backgroundColor={`#040e18`}

@@ -6,7 +6,7 @@ import Head from "../components/head/Head";
 import postStyles from "./post.module.scss";
 const Post = ({ data: { prismicContentItem } }) => {
   const { data } = prismicContentItem;
-  console.log(data);
+
   return (
     <React.Fragment>
       <Layout>
