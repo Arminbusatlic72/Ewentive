@@ -1,24 +1,17 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import backgroundSectionStyles from "./backgroundSection.module.scss";
-import Img from "gatsby-image";
+import { Background } from "react-imgix";
 
-const BackgroundSection = ({ className }) => {
+const BackgroundSection = () => {
   const data = useStaticQuery(graphql`
     query {
       allPrismicIndexPage {
         edges {
           node {
-            id
             data {
               background_image {
-                localFile {
-                  childImageSharp {
-                    fluid(quality: 90, maxWidth: 1920) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
-                }
+                url(imgixParams: { w: 1980, sat: -100 })
               }
             }
           }
@@ -28,20 +21,17 @@ const BackgroundSection = ({ className }) => {
   `);
 
   const imageData = data.allPrismicIndexPage.edges[0].node.data.background_image
-    .localFile
-    ? data.allPrismicIndexPage.edges[0].node.data.background_image.localFile
-        .childImageSharp.fluid
+    ? data.allPrismicIndexPage.edges[0].node.data.background_image.url
     : null;
 
   return (
     <>
       {imageData !== null && (
-        <Img
+        <Background
+          src={imageData}
+          imgixParams={{ w: 1920, h: 500 }}
           className={backgroundSectionStyles.backgroundSection}
-          fluid={imageData}
-          backgroundColor={`#040e18`}
-          alt="ewentive-bcg-image"
-        />
+        ></Background>
       )}
     </>
   );

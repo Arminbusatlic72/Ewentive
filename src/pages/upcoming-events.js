@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby";
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from "../components/layout/Layout"
 import Head from "../components/head/Head"
@@ -22,9 +23,9 @@ export const query = graphql`
         }
       }
   }
-`
+`;
 const List = ({data}) => {
-console.log(data)
+
 const seoData = data.allPrismicListPage.edges[0].node.data
 
     return(
