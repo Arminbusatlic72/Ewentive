@@ -40,6 +40,7 @@ const BackgroundSection = ({ className }) => {
           className={backgroundSectionStyles.backgroundSection}
           fluid={imageData}
           backgroundColor={`#040e18`}
+          alt="ewentive-bcg-image"
         />
       )}
     </>
