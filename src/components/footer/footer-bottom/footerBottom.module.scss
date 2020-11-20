@@ -12,6 +12,10 @@
   p {
     font-size: 0.7rem;
   }
+  span {
+    display: block;
+    list-style: none;
+  }
 }
 .social_media_menu {
   cursor: default;
@@ -24,7 +28,6 @@
       cursor: pointer;
       text-decoration: none;
       font-weight: 300;
-      // color: rgba(255, 255, 255, 0.4);
       color: #fff;
       display: inline-block;
       border: 1px solid #828282;
@@ -42,7 +45,6 @@
       opacity: 1;
     }
     i {
-      // color: rgba(255, 255, 255, 0.4);
       position: absolute;
       top: 7px;
       left: -13px;

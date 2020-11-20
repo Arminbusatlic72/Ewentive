@@ -7,7 +7,7 @@
         "placeholder" : "Index page"
       }
     },
-    "page_name1" : {
+    "page_name" : {
       "type" : "StructuredText",
       "config" : {
         "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
@@ -116,12 +116,13 @@
                   "placeholder" : "CTA button caption"
                 }
               },
-              "cta_link" : {
+              "link_to_page" : {
                 "type" : "Link",
                 "config" : {
-                  "select" : "media",
-                  "label" : "CTA link",
-                  "placeholder" : "CTA link"
+                  "select" : "document",
+                  "customtypes" : [ "no_sidebar_page" ],
+                  "label" : "Link to page",
+                  "placeholder" : "Link to page"
                 }
               }
             }

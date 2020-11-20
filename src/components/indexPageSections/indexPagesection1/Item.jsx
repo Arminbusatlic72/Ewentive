@@ -30,7 +30,7 @@ const Item = (props) => {
               <span>&nbsp;</span>
             )}
           </h4>
-          <Button link={item.content_item.uid}>
+          <Button link={item.link_to_page.uid}>
             {item.cta_button_caption}
           </Button>
         </div>

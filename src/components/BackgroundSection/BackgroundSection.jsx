@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import backgrounSectionStyles from "./backgroundSection.module.scss";
+import backgroundSectionStyles from "./backgroundSection.module.scss";
 import Img from "gatsby-image";
 
 const BackgroundSection = ({ className }) => {
@@ -37,7 +37,7 @@ const BackgroundSection = ({ className }) => {
     <>
       {imageData !== null && (
         <Img
-          className={backgrounSectionStyles.backgroundSection}
+          className={backgroundSectionStyles.backgroundSection}
           fluid={imageData}
           backgroundColor={`#040e18`}
         />

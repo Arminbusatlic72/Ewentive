@@ -2,14 +2,18 @@ import React from "react";
 import { graphql } from "gatsby";
 import { withPreview } from "gatsby-source-prismic";
 import Layout from "../components/layout/Layout";
+import Head from "../components/head/Head";
 import postStyles from "./post.module.scss";
 import ContentItem from "../components/no_sidebar_post_contentItem/ContentItem";
 const NoSideBarPost = ({ data: { prismicNoSidebarPage } }) => {
   const { data } = prismicNoSidebarPage;
+  const section2data = data.body[1] ? data.body[1].items : null;
+  const seoData = data;
 
   return (
     <React.Fragment>
       <Layout>
+        <Head metaData={seoData} />
         <main>
           <div className={postStyles.content_item__container}>
             <section className={postStyles.section}>
@@ -50,11 +54,16 @@ const NoSideBarPost = ({ data: { prismicNoSidebarPage } }) => {
               />
             </section>
           </div>
+
           <section className={postStyles.section}>
             <div className={postStyles.item__wrapp}>
-              {data.body[1].items.map((item) => (
-                <ContentItem cardData={item} key={item.content_item_link.id} />
-              ))}
+              {section2data != null &&
+                section2data.map((item) => (
+                  <ContentItem
+                    cardData={item}
+                    key={item.content_item_link.id}
+                  />
+                ))}
             </div>
           </section>
         </main>
@@ -68,6 +77,13 @@ export const pageQuery = graphql`
     prismicNoSidebarPage(uid: { eq: $uid }) {
       id
       data {
+        meta_description
+        meta_keywords
+        meta_no_index
+        meta_title
+        page_name {
+          text
+        }
         body {
           ... on PrismicNoSidebarPageBodySection1 {
             id
@@ -113,12 +129,18 @@ export const pageQuery = graphql`
             items {
               font_awesome
               link_caption
+              link_to_detail_page {
+                uid
+                slug
+              }
               content_item_link {
                 uid
                 id
+
                 document {
                   ... on PrismicContentItem {
                     id
+                    uid
                     data {
                       content_title {
                         text

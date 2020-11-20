@@ -15,11 +15,10 @@ const ContentItem = (props) => {
         </Dotdotdot>
         <Link
           className={contentItemStyles.section__link}
-          to={`/${item.content_item_link.uid}`}
+          to={`/${item.link_to_detail_page.uid}`}
         >
           {item.link_caption}
         </Link>
-        {/* <a href="{item.link_to_recording_or_past_event.url}">See more</a> */}
       </figure>
     </>
   );

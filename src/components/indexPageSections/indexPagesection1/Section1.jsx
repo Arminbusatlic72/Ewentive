@@ -15,9 +15,10 @@ const Section1 = () => {
                   id
                   items {
                     cta_button_caption
-                    cta_link {
-                      url
+                    link_to_page {
+                      uid
                     }
+
                     top_image {
                       alt
                       localFile {

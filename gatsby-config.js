@@ -35,6 +35,24 @@ module.exports = {
   `gatsby-transformer-sharp`, 
   `gatsby-plugin-sharp`,
   `gatsby-plugin-react-helmet`,
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `ewentive-gatsby-site`,
+      short_name: `Ewentive`,
+      start_url: `/`,
+      background_color: `#ffff`,
+      theme_color: `#000`,
+      display: `minimal-ui`,
+      icon: `src/images/EWENTIVE-logo.png`, // This path is relative to the root of the site.
+    },
+  },
+  {
+    resolve: `gatsby-plugin-offline`,
+    options: {
+      precachePages: [`/index/`, `/about-ewentive/*`],
+    },
+  },
   
   {
     resolve: "gatsby-plugin-google-tagmanager",
