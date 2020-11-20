@@ -11,7 +11,7 @@ const BackgroundSection = () => {
           node {
             data {
               background_image {
-                url(imgixParams: { w: 1980, sat: -100 })
+                url(imgixParams: { w: 1920, h: 500 })
               }
             }
           }
