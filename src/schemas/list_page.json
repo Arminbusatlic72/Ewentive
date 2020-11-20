@@ -134,5 +134,28 @@
         }
       }
     }
+  },
+  "Meta tags" : {
+    "meta_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Meta title",
+        "placeholder" : "Meta title"
+      }
+    },
+    "meta_description" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Meta description",
+        "placeholder" : "Meta description"
+      }
+    },
+    "meta_keywords" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Meta keywords",
+        "placeholder" : "Meta keywords"
+      }
+    }
   }
 }
