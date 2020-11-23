@@ -6,7 +6,7 @@ import Button from "../../../button/Button";
 
 const ListItem = (props) => {
   let item = props.cardData;
-  const imageData = item.top_image ? item.top_image.localFile.url : null;
+  const imageData = item.top_image ? item.top_image.url : null;
   return (
     <>
       <figure className={listItemStyles.card__item}>
