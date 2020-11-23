@@ -1,21 +1,19 @@
 import React from "react";
 import Dotdotdot from "react-dotdotdot";
 import itemStyles from "./item.module.scss";
-import Img from "gatsby-image";
+import Imgix from "react-imgix";
 import Button from "../../button/Button";
 
 const Item = (props) => {
   let item = props.cardData;
-  const imageData = item.top_image.localFile
-    ? item.top_image.localFile.childImageSharp.fluid
-    : null;
+  const imageData = item.top_image ? item.top_image.url : null;
   return (
     <>
       <figure className={itemStyles.card__item}>
         {imageData !== null && (
-          <Img
+          <Imgix
             className={itemStyles.img}
-            fluid={imageData}
+            src={imageData}
             alt={item.top_image.alt}
           />
         )}

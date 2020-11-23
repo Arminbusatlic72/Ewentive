@@ -13,22 +13,16 @@ const Section1 = () => {
                 ... on PrismicListPageBodyListOfContentItems {
                   id
                   items {
+                    top_image {
+                      alt
+                      url
+                    }
+                    cta_subscribe_button_caption
                     content_item {
                       id
                     }
                     subscribe_button {
                       slug
-                    }
-                    cta_subscribe_button_caption
-                    top_image {
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 600, quality: 100) {
-                            ...GatsbyImageSharpFluid_withWebp
-                          }
-                        }
-                      }
-                      alt
                     }
                   }
                 }

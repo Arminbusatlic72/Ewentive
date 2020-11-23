@@ -21,13 +21,7 @@ const Section1 = () => {
 
                     top_image {
                       alt
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 600, quality: 100) {
-                            ...GatsbyImageSharpFluid_withWebp
-                          }
-                        }
-                      }
+                      url(imgixParams: { width: 400 })
                     }
                     content_item {
                       id
