@@ -29,7 +29,9 @@ const BackgroundSection = () => {
       {imageData !== null && (
         <Background
           src={imageData}
-          imgixParams={{ w: 1920, h: 500 }}
+          imgixParams={{ maxWidth: 1920, h: 500 }}
+          sizes="calc(10% - 10px)"
+          fit="clip"
           className={backgroundSectionStyles.backgroundSection}
         ></Background>
       )}

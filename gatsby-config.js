@@ -30,10 +30,32 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'ewentive',
+       
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          menu: require('./src/schemas/menu.json'),
+          content_item: require('./src/schemas/content_item.json'),
+          index_page: require('./src/schemas/index_page.json'),
+          list_page: require('./src/schemas/list_page.json'),
+          no_sidebar_page: require('./src/schemas/no_sidebar.json')
+        },
+        shouldDownloadImage: ({ node, key, value }) => {
+          // Return true to download the image or false to skip.
+          return true
+        },
+        linkResolver: ({ node, key, value }) => (doc) => {
+          // Your link resolver
+        }
+        
+      },
+    },
     
   `gatsby-plugin-sass`,
-  `gatsby-transformer-sharp`, 
-  `gatsby-plugin-sharp`,
   `gatsby-plugin-react-helmet`,
   {
     resolve: `gatsby-plugin-manifest`,
@@ -66,30 +88,19 @@ module.exports = {
 
     },
   },
-    {
-      resolve: 'gatsby-source-prismic',
-      options: {
-        repositoryName: 'ewentive',
-       
-        accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
-        schemas: {
-          menu: require('./src/schemas/menu.json'),
-          content_item: require('./src/schemas/content_item.json'),
-          index_page: require('./src/schemas/index_page.json'),
-          list_page: require('./src/schemas/list_page.json'),
-          no_sidebar_page: require('./src/schemas/no_sidebar.json')
-        },
-        shouldDownloadImage: ({ node, key, value }) => {
-          // Return true to download the image or false to skip.
-          return true
-        },
-        linkResolver: ({ node, key, value }) => (doc) => {
-          // Your link resolver
-        }
-        
+  {
+    resolve: `gatsby-plugin-gdpr-cookies`,
+    options: {
+      googleTagManager: {
+        trackingId: "GTM-5DRD8BV", // leave empty if you want to disable the tracker
+        cookieName: 'gatsby-gdpr-google-tagmanager', // default
+        dataLayerName: 'dataLayer', // default
       },
-    }
-    
+      
+      // Defines the environments where the tracking should be available  - default is ["production"]
+      environments: ['production', 'development']
+    },
+  }
+       
   ],
 }

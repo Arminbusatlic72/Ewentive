@@ -9,26 +9,42 @@ const Section1 = () => {
         edges {
           node {
             data {
+              list_page_title {
+                html
+              }
               body {
                 ... on PrismicListPageBodyListOfContentItems {
                   id
                   items {
                     top_image {
                       alt
-                      url
+                      url(imgixParams: { width: 400 })
+                    }
+
+                    content_item {
+                      document {
+                        ... on PrismicContentItem {
+                          id
+                          data {
+                            date_of_event(formatString: "LL")
+                            content_title {
+                              text
+                            }
+                            place {
+                              text
+                            }
+                            activity_type1
+                          }
+                        }
+                      }
                     }
                     cta_subscribe_button_caption
-                    content_item {
-                      id
-                    }
                     subscribe_button {
+                      url
                       slug
                     }
                   }
                 }
-              }
-              list_page_title {
-                html
               }
             }
           }
@@ -49,7 +65,7 @@ const Section1 = () => {
           />
         </div>
 
-        <div className={section1Styles.item__wrapp}>
+        <div className={section1Styles.item__wrapp_emulated_flex_gap}>
           {data.allPrismicListPage.edges[0].node.data.body[0].items.map(
             (item) => (
               <ListItem cardData={item} key={item.content_item.id} />

@@ -14,6 +14,8 @@ const Item = (props) => {
           <Imgix
             className={itemStyles.img}
             src={imageData}
+            imgixParams={{ w: 400, h: 400 }}
+            sizes="calc(10% - 10px)"
             alt={item.top_image.alt}
           />
         )}

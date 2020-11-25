@@ -1,8 +1,7 @@
 import React from "react";
-
 import listItemStyles from "./listItem.module.scss";
 import Imgix from "react-imgix";
-import Button from "../../../button/Button";
+import ExternalButton from "../../../button/ExternalButton";
 
 const ListItem = (props) => {
   let item = props.cardData;
@@ -14,15 +13,20 @@ const ListItem = (props) => {
           <Imgix
             className={listItemStyles.img}
             src={imageData}
+            imgixParams={{ w: 400, h: 400 }}
+            sizes="calc(10% - 10px)"
+            fit="clip"
             alt={item.top_image.alt}
           />
         )}
         <div className={listItemStyles.item__body}>
-          <p>Website development and integration with CRM and analytics.</p>
-          <h4>hands-on consulting</h4>
-          <Button link={item.subscribe_button.slug}>
+          <p>{item.content_item.document.data.date_of_event}</p>
+          <p>{item.content_item.document.data.place.text}</p>
+          <h4>{item.content_item.document.data.content_title.text}</h4>
+          <p>{item.content_item.document.data.activity_type1}</p>
+          <ExternalButton link={item.subscribe_button.url}>
             {item.cta_subscribe_button_caption}
-          </Button>
+          </ExternalButton>
         </div>
       </figure>
     </>

@@ -9,7 +9,7 @@
     width: 100%;
   }
   @include mediaMd {
-    width: 48%;
+    width: 45%;
   }
   @include mediaLg {
     width: 31%;
@@ -18,9 +18,12 @@
     width: 31%;
   }
 }
-
 .item__body {
-  padding: 3em 2em;
+  padding: 1em 2em 2em;
   background: #fff;
   border-radius: 0px 0px 6px 6px;
+}
+.img {
+  width: 100%;
+  height: auto;
 }
