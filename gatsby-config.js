@@ -77,28 +77,30 @@ module.exports = {
   },
   
   {
-    resolve: "gatsby-plugin-google-tagmanager",
-    options: {
-      id: "GTM-5DRD8BV",
-
-      // Include GTM in development.
-      //
-      // Defaults to false meaning GTM will only be loaded in production.
-      includeInDevelopment: false,
-
-    },
-  },
-  {
     resolve: `gatsby-plugin-gdpr-cookies`,
     options: {
       googleTagManager: {
         trackingId: "GTM-5DRD8BV", // leave empty if you want to disable the tracker
+        routeChangeEvent: "gatsbyRouteChange",
         cookieName: 'gatsby-gdpr-google-tagmanager', // default
         dataLayerName: 'dataLayer', // default
       },
       
       // Defines the environments where the tracking should be available  - default is ["production"]
       environments: ['production', 'development']
+    },
+  },
+  {
+    resolve: "gatsby-plugin-google-tagmanager",
+    options: {
+      id: "GTM-5DRD8BV",
+      
+
+      // Include GTM in development.
+      //
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: false,
+
     },
   }
        
