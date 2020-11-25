@@ -90,19 +90,19 @@ module.exports = {
       environments: ['production', 'development']
     },
   },
-  {
-    resolve: "gatsby-plugin-google-tagmanager",
-    options: {
-      id: "GTM-5DRD8BV",
+  // {
+  //   resolve: "gatsby-plugin-google-tagmanager",
+  //   options: {
+  //     id: "GTM-5DRD8BV",
       
 
-      // Include GTM in development.
-      //
-      // Defaults to false meaning GTM will only be loaded in production.
-      includeInDevelopment: false,
+  //     // Include GTM in development.
+  //     //
+  //     // Defaults to false meaning GTM will only be loaded in production.
+  //     includeInDevelopment: false,
 
-    },
-  }
+  //   },
+  // }
        
   ],
 }
