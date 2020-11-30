@@ -21,7 +21,7 @@ const Section1 = () => {
 
                     top_image {
                       alt
-                      url(imgixParams: { width: 400, height: 400 })
+                      url(imgixParams: { width: 400, height: 160 })
                     }
                     content_item {
                       id

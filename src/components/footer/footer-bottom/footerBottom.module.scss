@@ -17,6 +17,16 @@
     list-style: none;
   }
 }
+.footer_menu {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+  color: #fff;
+}
+.footer_nav_link {
+  text-decoration: none;
+  color: #fff;
+}
 .social_media_menu {
   cursor: default;
   text-align: center;
@@ -30,7 +40,7 @@
       font-weight: 300;
       color: #fff;
       display: inline-block;
-      border: 1px solid #828282;
+
       border: 1px solid #fff;
       width: 2em;
       height: 2em;
