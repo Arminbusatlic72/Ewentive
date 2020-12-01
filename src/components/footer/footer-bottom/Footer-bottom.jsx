@@ -29,11 +29,12 @@ const FooterBottom = () => {
       }
     }
   `);
+  console.log(data);
 
   return (
     <div className={footerBottomStyles.footer__bottom}>
       <ul className={footerBottomStyles.footer_menu}>
-        {data.allPrismicHeaderMenu.edges[1].node.data.body[0].items.map(
+        {data.allPrismicHeaderMenu.edges[0].node.data.body[0].items.map(
           (item) => (
             <li
               className={footerBottomStyles.footer_nav_item}
@@ -57,7 +58,7 @@ const FooterBottom = () => {
       </ul>
 
       <ul className={footerBottomStyles.social_media_menu}>
-        {data.allPrismicHeaderMenu.edges[1].node.data.body[1].items.map(
+        {data.allPrismicHeaderMenu.edges[0].node.data.body[1].items.map(
           (item) => (
             <Icon menuData={item} key={item.social_name} />
           )

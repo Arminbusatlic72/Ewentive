@@ -42,9 +42,8 @@ const Header = () => {
             />
           ) : (
             <div>
-              {" "}
               <h1>Marketing for small businesses</h1>
-              <span>by Ewentive</span>
+              <span> by Ewentive</span>
             </div>
           )}
         </Link>

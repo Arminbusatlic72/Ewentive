@@ -32,7 +32,7 @@
   background: black;
   position: absolute;
   left: 15px;
-  top: 30px;
+  top: 20px;
   z-index: 13;
   cursor: pointer;
   display: block;
@@ -80,7 +80,6 @@
 .navNarrow {
   @media (max-width: 768px) {
     @include easeOut;
-    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
     position: fixed;
