@@ -9,9 +9,9 @@ import CookieConsent from "react-cookie-consent";
 const Layout = (props) => {
   return (
     <div className={layoutStyles.wrapper}>
-      <BackgroundSection />
       <div className={layoutStyles.container}>
         <Header />
+        <BackgroundSection />
         <div className={layoutStyles.content}>{props.children}</div>
       </div>
       <Footer />

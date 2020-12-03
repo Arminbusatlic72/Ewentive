@@ -13,13 +13,31 @@
   z-index: 100;
   font-size: 100%;
 }
-
+.header_logo_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include mediaMd {
+    flex-direction: row;
+  }
+  @include mediaLg {
+    flex-direction: row;
+  }
+  @include mediaXL {
+    flex-direction: row;
+  }
+}
+.logo_svg {
+  height: 60px;
+}
 .logo {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
   h1 {
     font-size: 0.8em;
+    margin: 0;
     @include mediaMd {
       font-size: 1em;
     }
@@ -31,18 +49,19 @@
     }
     text-transform: uppercase;
     display: inline;
-  }
-  span {
-    display: inline;
-    color: #555555;
-    font-family: "Raleway", sans-serif;
-    font-weight: 300;
-    line-height: 1.65em;
-    @include mediaSm {
-      display: none;
-    }
-    @include mediaMd {
-      display: none;
+    span {
+      display: inline;
+      color: #555555;
+      font-family: "Raleway", sans-serif;
+      font-weight: 300;
+      line-height: 1.65em;
+      text-transform: none;
+      @include mediaSm {
+        display: none;
+      }
+      @include mediaMd {
+        display: none;
+      }
     }
   }
 }
