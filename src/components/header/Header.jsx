@@ -27,9 +27,7 @@ const Header = () => {
         <Link className={headerStyles.logo} to="/">
           <div className={headerStyles.header_logo_wrapper}>
             <Logo className={headerStyles.logo_svg} />
-            <h1>
-              {title} <span>by Ewentive</span>
-            </h1>
+            <h1>{title}</h1>
           </div>
         </Link>
       </div>

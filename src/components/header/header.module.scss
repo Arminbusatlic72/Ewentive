@@ -18,9 +18,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  @include mediaMd {
-    flex-direction: row;
-  }
+
   @include mediaLg {
     flex-direction: row;
   }
@@ -49,20 +47,6 @@
     }
     text-transform: uppercase;
     display: inline;
-    span {
-      display: inline;
-      color: #555555;
-      font-family: "Raleway", sans-serif;
-      font-weight: 300;
-      line-height: 1.65em;
-      text-transform: none;
-      @include mediaSm {
-        display: none;
-      }
-      @include mediaMd {
-        display: none;
-      }
-    }
   }
 }
 
