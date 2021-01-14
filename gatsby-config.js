@@ -17,7 +17,9 @@ module.exports = {
     flags: {
       PRESERVE_FILE_DOWNLOAD_CACHE: true,
       PRESERVE_WEBPACK_CACHE: true,
-      QUERY_ON_DEMAND: true
+      QUERY_ON_DEMAND: true,
+      LAZY_IMAGES: true,
+      FAST_REFRESH: true,
     },
   
   plugins: [
