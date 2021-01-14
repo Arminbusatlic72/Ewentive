@@ -13,6 +13,13 @@ module.exports = {
     author: "Armin Busatlic",
     siteUrl: `https://www.ewentive.io/`,
   },
+ 
+    flags: {
+      PRESERVE_FILE_DOWNLOAD_CACHE: true,
+      PRESERVE_WEBPACK_CACHE: true,
+      QUERY_ON_DEMAND: true
+    },
+  
   plugins: [
     {
       resolve: `gatsby-plugin-sitemap`,
