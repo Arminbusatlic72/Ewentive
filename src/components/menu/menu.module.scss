@@ -32,7 +32,7 @@
   background: black;
   position: absolute;
   left: 15px;
-  top: 30px;
+  top: 40px;
   z-index: 13;
   cursor: pointer;
   display: block;
@@ -54,7 +54,7 @@
   background: black;
   position: absolute;
   left: 240px;
-  top: 30px;
+  top: 40px;
   z-index: 13;
   cursor: pointer;
   display: block;
@@ -93,6 +93,7 @@
     transform: translate(275px, 0px);
     background: #000;
     height: 100%;
+    padding-top: 1em;
   }
 
   .nav_item {
