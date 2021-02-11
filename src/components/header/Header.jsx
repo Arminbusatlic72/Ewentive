@@ -1,33 +1,16 @@
 import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import Menu from "../menu/Menu";
 import headerStyles from "./header.module.scss";
-import Logo from "../../assets/EWENTIVE-logo.svg";
+// import Logo from "../../assets/EWENTIVE-logo-new.svg";
+import Logo from "../../images/EWENTIVE-logo-new.png";
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allPrismicIndexPage {
-        edges {
-          node {
-            data {
-              title {
-                text
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  let title = data.allPrismicIndexPage.edges[0].node.data.title.text;
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.mobile__header}>
         <Link className={headerStyles.logo} to="/">
           <div className={headerStyles.header_logo_wrapper}>
-            <Logo className={headerStyles.logo_svg} />
-            <h1>{title}</h1>
+            <img className={headerStyles.logo} src={Logo} alt="logo" />
           </div>
         </Link>
       </div>
