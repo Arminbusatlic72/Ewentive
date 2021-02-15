@@ -6,6 +6,8 @@ import HeadingSection from "../components/indexPageSections/indexPageheadingSect
 import Section1 from "../components/indexPageSections/indexPagesection1/Section1"
 import Section2 from "../components/indexPageSections/indexPagesection2/Section2"
 import { graphql, useStaticQuery } from "gatsby"
+import { InlineWidget } from "react-calendly";
+
 
 
 
@@ -42,8 +44,27 @@ const IndexPage = () => {
       <Head metaData={seoData}/>
       <main>
       <HeadingSection />
+      
       <Section1 />
       <Section2 />
+      <InlineWidget
+          text="Schedule time for a quick chat (max 30 min)"
+          url="https://calendly.com/ewentive/30min"
+          styles={{
+            minWidth: '320px',
+            width: '100%',
+            height: "650px",
+          }}
+          pageSettings={{
+            backgroundColor: "ffffff",
+            hideEventTypeDetails: false,
+            hideLandingPageDetails: false,
+            primaryColor: "00a2ff",
+            textColor: "4d5055",
+          
+          }}
+        />
+      
         
     </main>
       </Layout></>)

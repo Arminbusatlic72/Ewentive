@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Menu from "../menu/Menu";
 import headerStyles from "./header.module.scss";
-import Logo from "../../assets/EwentiveLogo3.svg";
+import Logo from "../../assets/LogoNew.svg";
 
 const Header = () => {
   return (
