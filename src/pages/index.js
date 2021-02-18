@@ -6,7 +6,7 @@ import HeadingSection from "../components/indexPageSections/indexPageheadingSect
 import Section1 from "../components/indexPageSections/indexPagesection1/Section1"
 import Section2 from "../components/indexPageSections/indexPagesection2/Section2"
 import { graphql, useStaticQuery } from "gatsby"
-import { PopupWidget } from "react-calendly";
+
 
 
 
@@ -47,13 +47,7 @@ const IndexPage = () => {
       
       <Section1 />
       <Section2 />
-      <PopupWidget
-          text="Schedule time for a quick chat (max 30 min)"
-          url="https://calendly.com/ewentive/30min"
-          textColor="#ffffff"
-          color='#4d5055'
-          
-        />
+      
       
         
     </main>

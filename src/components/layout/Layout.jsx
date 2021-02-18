@@ -5,6 +5,7 @@ import layoutStyles from "./layout.module.scss";
 import "../../styles/index.scss";
 import BackgroundSection from "../BackgroundSection/BackgroundSection";
 import CookieConsent from "react-cookie-consent";
+import { PopupWidget } from "react-calendly";
 
 const Layout = (props) => {
   return (
@@ -13,6 +14,12 @@ const Layout = (props) => {
         <Header />
         <BackgroundSection />
         <div className={layoutStyles.content}>{props.children}</div>
+        <PopupWidget
+          text="Schedule time for a quick chat (max 30 min)"
+          url="https://calendly.com/ewentive/30min"
+          textColor="#ffffff"
+          color="#4d5055"
+        />
       </div>
       <Footer />
       <CookieConsent
